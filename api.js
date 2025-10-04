@@ -5,17 +5,15 @@ import cors from "cors";
 import * as CC from "./controller/contactsApiController.js";
 import * as GC from "./controller/groupsApiController.js";
 
-dotenv.config();
-
-const app = express();
-const PORT = 4000;
+MONGO_URI =
+  "mongodb+srv://root:root@cluster0.i19yisd.mongodb.net/contactsDB?retryWrites=true&w=majority&appName=Cluster0";
 
 app.use(express.json());
 app.use(cors());
 
 const connectDB = async () => {
   await mongoose
-    .connect(process.env.MONGO_URL)
+    .connect(MONGO_URI)
     .then(() => console.log("Conectado com MongoDB:"))
     .catch((error) => {
       console.log(`Erro ao tentar conectar com MongoDB:\n${error}`);
