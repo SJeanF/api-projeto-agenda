@@ -55,7 +55,3 @@ app.patch("/contact/:id", CC.patchContactById);
 // DELETE
 
 app.delete("/contact/:id", CC.deleteContactById);
-
-// LISTEN
-
-app.listen(PORT, () => console.log(`servidor ouvindo a porta ${PORT}`));
